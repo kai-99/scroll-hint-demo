@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Scrol Demo</title>
+		<!-- Scroll Hint -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css"
+		/>
+		<script src="https://unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
+		<script>
+			window.addEventListener("DOMContentLoaded", function () {
+				new ScrollHint(".js-scrollable", {
+					suggestiveShadow: true,
+				});
+			});
+		</script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.container {
+				max-width: 420px;
+				margin: 0 auto;
+			}
+			th,
+			td {
+				border: 1px solid #555;
+				padding: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="js-scrollable">
+				<table
+					style="
+						display: block;
+						white-space: nowrap;
+						overflow-x: scroll;
+						width: 100%;
+					"
+				>
+					<tbody>
+						<tr>
+							<th>Col1</th>
+							<th>Col2</th>
+							<th>Col3</th>
+						</tr>
+						<tr>
+							<td>Lorem ipsum dolor sit.</td>
+							<td>Lorem ipsum dolor sit.</td>
+							<td>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et,
+								magnam.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
