@@ -8,13 +8,16 @@
 		<!-- Scroll Hint -->
 		<link
 			rel="stylesheet"
-			href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css"
+			href="https://unpkg.com/scroll-hint@latest/css/scroll-hint.css"
 		/>
-		<script src="https://unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
+		<script src="https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js"></script>
 		<script>
 			window.addEventListener("DOMContentLoaded", function () {
 				new ScrollHint(".js-scrollable", {
 					suggestiveShadow: true,
+					i18n: {
+						scrollable: "スクロールできます",
+					},
 				});
 			});
 		</script>
@@ -34,6 +37,16 @@
 				max-width: 420px;
 				margin: 0 auto;
 			}
+			.container > h1 {
+				text-align: center;
+				color: #555;
+			}
+			table {
+				display: block;
+				white-space: nowrap;
+				overflow-x: scroll;
+				width: 100%;
+			}
 			th,
 			td {
 				border: 1px solid #555;
@@ -43,32 +56,24 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="js-scrollable">
-				<table
-					style="
-						display: block;
-						white-space: nowrap;
-						overflow-x: scroll;
-						width: 100%;
-					"
-				>
-					<tbody>
-						<tr>
-							<th>Col1</th>
-							<th>Col2</th>
-							<th>Col3</th>
-						</tr>
-						<tr>
-							<td>Lorem ipsum dolor sit.</td>
-							<td>Lorem ipsum dolor sit.</td>
-							<td>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et,
-								magnam.
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<h1>Table Scroll</h1>
+			<table class="js-scrollable">
+				<tbody>
+					<tr>
+						<th>Col1</th>
+						<th>Col2</th>
+						<th>Col3</th>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit.</td>
+						<td>Lorem ipsum dolor sit.</td>
+						<td>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et,
+							magnam.
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
 </html>
